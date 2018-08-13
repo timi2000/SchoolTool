@@ -1,0 +1,17 @@
+<div id="search-component">
+  <h4>Student Search</h4>
+
+
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search Student"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let student of students$ | async | slice:0:5 " class="list-group-item" > <a routerLink="/detail/{{student.id}}">
+      {{student.firstname}}
+    </a></li>
+
+  </ul>
+</div>
