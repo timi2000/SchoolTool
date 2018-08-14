@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
-
+import {Teacher} from './teacher';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,7 +16,7 @@ const BASE_URL = 'http://localhost:3000/api/students/';
   providedIn: 'root'
 })
 export class StudentService {
-
+    private teacherUrl = 'api/teacher';
     private studentsUrl = 'api/students';
     constructor(
         private http: HttpClient,
@@ -53,11 +53,24 @@ getStudents (): Observable<Student[]> {
             catchError(this.handleError<Student>(`getStudent id=${id}`))
         );
     }
+    getTeacher(id: number): Observable<Teacher> {
+        const url = `${this.teacherUrl}/${id}`;
+        return this.http.get<Teacher>(url).pipe(
+            tap(_ => this.log(`fetched teacher id=${id}`)),
+            catchError(this.handleError<Teacher>(`getTeacher id=${id}`))
+        );
+    }
     /** PUT: update the hero on the server */
     updateStudent (student: Student): Observable<any> {
         return this.http.put(this.studentsUrl, student, httpOptions).pipe(
             tap(_ => this.log(`updated Student id=${student.id}`)),
             catchError(this.handleError<any>('updateStudent'))
+        );
+    }
+    updateTeacher (teacher: Teacher): Observable<any> {
+        return this.http.put(this.teacherUrl, teacher, httpOptions).pipe(
+            tap(_ => this.log(`updated teacher id=${teacher.id}`)),
+            catchError(this.handleError<any>('updateTeacher'))
         );
     }
     addStudent (student: Student): Observable<Student> {
@@ -87,6 +100,16 @@ getStudents (): Observable<Student[]> {
             catchError(this.handleError<Student[]>('Search', []))
         );
         }
+    searchTeacher(term: string): Observable<Teacher[]> {
+        if (!term.trim()) {
+            // if not search term, return empty hero array.
+            return of([]);
+        }
+        return this.http.get<Teacher[]>(`${this.teacherUrl}/?firstname=${term}`).pipe(
+            tap(_ => this.log(`found teacher matching "${term}"`)),
+            catchError(this.handleError<Teacher[]>('Search', []))
+        );
+    }
     /**
      * Handle Http operation that failed.
      * Let the app continue.

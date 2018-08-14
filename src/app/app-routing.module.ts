@@ -11,6 +11,7 @@ import { SearchClassComponent } from './class/search-class/search-class.componen
 import { TeacherComponent } from './teacher/teacher.component';
 import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.component';
 import { SearchTeacherComponent } from './teacher/search-teacher/search-teacher.component';
+import {NewTeacherComponent} from './teacher/new-teacher/new-teacher.component';
 
 
 
@@ -20,9 +21,12 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'detail/:id', component: StudentDetailComponent },
     { path: 'teacher', component: TeacherComponent },
-    { path: 'class', component:  ClassComponent}
+    { path: 'class', component:  ClassComponent},
+    {path: 'TeacherHome', component: TeacherComponent},
+    {path: 'newTeacher', component: NewTeacherComponent},
+    {path: 'teacher-detail/:id', component: TeacherDetailComponent}];
 
-];
+
 @NgModule({
     exports: [ RouterModule ],
     imports: [ RouterModule.forRoot(routes) ]

@@ -21,6 +21,7 @@ import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.
 import { SearchTeacherComponent } from './teacher/search-teacher/search-teacher.component';
 import { SearchStudentComponent } from './students/search-student/search-student.component';
 import { NewStudentComponent } from './students/new-student/new-student.component';
+import { NewTeacherComponent } from './teacher/new-teacher/new-teacher.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { NewStudentComponent } from './students/new-student/new-student.componen
     TeacherDetailComponent,
     SearchTeacherComponent,
     SearchStudentComponent,
-    NewStudentComponent
+    NewStudentComponent,
+    NewTeacherComponent
   ],
   imports: [
     BrowserModule,

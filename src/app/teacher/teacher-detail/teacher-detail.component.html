@@ -1,3 +1,58 @@
-<p>
-  teacher-detail works!
-</p>
+<H1>Lehrer Bearbeiten</H1>
+<div *ngIf="teacher">
+
+  <h2>{{teacher.firstname | uppercase}} Details</h2>
+
+  <div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Gender
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" >Mann</a>
+        <a class="dropdown-item" >Frau</a>
+        <a class="dropdown-item" >Keine Angabe</a>
+      </div>
+    </div>
+    <h3>Nachname</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.firstname"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>Vorname</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.lastname"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3> address</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.address"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>plz</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.place"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>ort</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.city"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>email</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.email"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>Telefon</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.phone"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>Handy</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.mobile"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>Geburtstag</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="teacher.birthday"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+
+  </div>
+  <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+  <button type="button" class="btn btn-success" (click)="save()">save</button>
+
+</div>

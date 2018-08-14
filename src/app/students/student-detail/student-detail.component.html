@@ -1,3 +1,18 @@
-<p>
-  student-detail works!
-</p>
+<div *ngIf="student">
+
+  <h2>{{student.firstname | uppercase}} Details</h2>
+  <div><span>id: </span>{{student.id}}</div>
+  <div>
+    <h3>Secondname</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="student.firstname" placeholder="name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>firstname</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  [(ngModel)]="student.lastname" placeholder="name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+  <button type="button" class="btn btn-success" (click)="save()">save</button>
+
+</div>
