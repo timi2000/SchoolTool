@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
@@ -22,6 +22,10 @@ import { SearchTeacherComponent } from './teacher/search-teacher/search-teacher.
 import { SearchStudentComponent } from './students/search-student/search-student.component';
 import { NewStudentComponent } from './students/new-student/new-student.component';
 import { NewTeacherComponent } from './teacher/new-teacher/new-teacher.component';
+import { EditTeacherComponent } from './teacher/edit-teacher/edit-teacher.component';
+
+
+
 
 
 @NgModule({
@@ -41,9 +45,12 @@ import { NewTeacherComponent } from './teacher/new-teacher/new-teacher.component
     SearchTeacherComponent,
     SearchStudentComponent,
     NewStudentComponent,
-    NewTeacherComponent
+    NewTeacherComponent,
+    EditTeacherComponent
   ],
   imports: [
+
+      ReactiveFormsModule,
     BrowserModule,
       FormsModule,
       AppRoutingModule,

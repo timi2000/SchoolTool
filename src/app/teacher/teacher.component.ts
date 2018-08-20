@@ -5,6 +5,8 @@ import {Student} from '../student';
 import {StudentService} from '../student.service';
 import {Teacher} from '../teacher';
 
+//import {Teacher} from '../teacher';
+
 
 @Component({
   selector: 'app-teacher',
@@ -12,6 +14,7 @@ import {Teacher} from '../teacher';
   styleUrls: ['./teacher.component.css']
 })
 export class TeacherComponent implements OnInit {
+ currentDate = new Date();
 
     teachers$: Observable<Teacher[]>;
     private searchTerms = new Subject<string>();

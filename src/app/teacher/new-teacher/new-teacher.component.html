@@ -1,3 +1,61 @@
-<p>
-  new-teacher works!
-</p>
+<H1>Neuer Lehrer erfassen</H1>
+
+
+  <div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Gender
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item"  >Mann</a>
+        <a class="dropdown-item" >Frau</a>
+        <a class="dropdown-item" >Keine Angabe</a>
+      </div>
+    </div>
+    <h3>Nachname</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  #teacherSecondname aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>
+    <h3>Vorname</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  #teacherfirstname  aria-label="Recipient's lastname" aria-describedby="basic-addon2">
+    </div>
+    <h3> address</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  #teacheraddress   aria-label="Recipient's adresse" aria-describedby="basic-addon2">
+    </div>
+    <h3>plz</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  #teacherplace   aria-label="Recipient's plz" aria-describedby="basic-addon2">
+    </div>
+    <h3>ort</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" #teachercity   aria-label="Recipient's city" aria-describedby="basic-addon2">
+    </div>
+    <h3>email</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  #teacheremail  aria-label="Recipient's email" aria-describedby="basic-addon2">
+    </div>
+    <h3>Telefon</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" #teacherphone   aria-label="Recipient's phone" aria-describedby="basic-addon2">
+    </div>
+    <h3>Handy</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" #teachermobile   aria-label="Recipient's mobilenumber" aria-describedby="basic-addon2">
+    </div>
+    <h3>Geburtstag</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control"  #teacherbirthday  aria-label="Recipient's birthday" aria-describedby="basic-addon2">
+    </div>
+
+  </div>
+  <button type="button" class="btn btn-primary" (click)="goBack()">go back</button>
+  <button type="button" class="btn btn-success" (click)="add(teacherSecondname.value, teacherfirstname.value, teacheraddress.value, teacherplace.value, teachercity.value,
+  teacheremail.value, teacherphone.value, teachermobile.value, teacherbirthday.value
+  ); teacherSecondname.value=''; teacherfirstname.value=''; teacheraddress.value=''; teacherplace.value=''; teachercity.value=''; teachercity.value=''; teacheremail.value='';
+  teacherphone.value=''; teachermobile.value=''; teacherbirthday.value='';
+">save</button>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+

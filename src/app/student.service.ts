@@ -6,6 +6,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
 import {Teacher} from './teacher';
+import {Teacherone} from './models/model-interface';
+
+
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,6 +18,7 @@ const BASE_URL = 'http://localhost:3000/api/students/';
 @Injectable({
   providedIn: 'root'
 })
+
 export class StudentService {
     private teacherUrl = 'api/teacher';
     private studentsUrl = 'api/students';
@@ -79,6 +83,12 @@ getStudents (): Observable<Student[]> {
             catchError(this.handleError<Student>('addStudent'))
         );
     }
+    addTeacher (teacher: Teacher): Observable<Teacher> {
+        return this.http.post<Teacher>(this.teacherUrl, teacher, httpOptions).pipe(
+            tap((teacher: Teacher) => this.log(`added Teacher w/ id=${teacher.id}`)),
+            catchError(this.handleError<Teacher>('addTeacher'))
+        );
+    }
     /** DELETE: delete the hero from the server */
     deleteStudent (student: Student | number): Observable<Student> {
         const id = typeof student === 'number' ? student : student.id;
@@ -110,6 +120,17 @@ getStudents (): Observable<Student[]> {
             catchError(this.handleError<Teacher[]>('Search', []))
         );
     }
+
+  /*  saveTask(teacher: Teacherone) {
+        const options = {
+            body: teacher,
+            method: teacher.idTeacher ? RequestMethod.Put :RequestMethod.Post
+        };
+
+        return this.http.request(BASE_URL + (teacher.id || ''), options)
+            .map(res => res.json());
+    }*/
+
     /**
      * Handle Http operation that failed.
      * Let the app continue.

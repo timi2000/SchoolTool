@@ -18,7 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 11, firstname: 'Hoitim', lastname: 'qw', address: 'Strasse1', place: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
             { id: 12, firstname: 'Peter', lastname: 'w', address: 'Strasse1', place: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
             { id: 13, firstname: 'müller', lastname: 'wq', address: 'Strasse1', place: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
-            { id: 14, firstname: 'AJ', lastname: 'w', address: 'Strasse1', place: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
+            { id: 14, firstname: 'AJ', lastname: 'w', address: 'Strasse1', tlace: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
             { id: 15, firstname: 'ichwotheiga', lastname: 'sd', address: 'Strasse1', place: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
             { id: 16, firstname: 'ichbemüde', lastname: 'asdf', address: 'Strasse1', place: '6006',  city: 'luzern',  email: 'team@wee.ch',  phone: '1828888', birthday: '10.07,1997'},
         ];

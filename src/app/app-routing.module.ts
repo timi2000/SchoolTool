@@ -12,6 +12,7 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.component';
 import { SearchTeacherComponent } from './teacher/search-teacher/search-teacher.component';
 import {NewTeacherComponent} from './teacher/new-teacher/new-teacher.component';
+import {EditTeacherComponent} from './teacher/edit-teacher/edit-teacher.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
     { path: 'teacher', component: TeacherComponent },
     { path: 'class', component:  ClassComponent},
     {path: 'TeacherHome', component: TeacherComponent},
-    {path: 'newTeacher', component: NewTeacherComponent},
+    {path: 'newteacher', component: NewTeacherComponent},
+    {path: 'editTeacher', component: EditTeacherComponent},
     {path: 'teacher-detail/:id', component: TeacherDetailComponent}];
 
 
